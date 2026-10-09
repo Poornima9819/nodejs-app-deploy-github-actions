@@ -1,4 +1,4 @@
-name: Deploy Application to AWS Server
+name: Deploy NodeJS Application to AWS Server
 
 on:
   push:
