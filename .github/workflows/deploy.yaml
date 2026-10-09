@@ -17,10 +17,13 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: root
-          key: ${{ secrets.SSH_KEY}}
+          username: ubuntu
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          timeout: 30s
+          command_timeout: 10m
           script: |
             cd /home/ubuntu/nodejs-app-deploy-github-actions
             git pull
             docker compose up -d --build
-            
+                    
